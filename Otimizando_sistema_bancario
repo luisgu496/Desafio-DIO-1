@@ -1,0 +1,27 @@
+import textwrap
+
+def menu():
+  menu = """/n
+  ==================MENU=====================
+  [d] - Depósito
+  [s] - Saque
+  [e] - Extrato
+  [nc] - Nova Conta
+  [lc] - Listar Contas
+  [nu] - Novo Usuário
+  [f] - Fechar o programa
+  -=-=-=-=-=-=-=-=-=-=-=-=
+"""
+return input(textwrap.dedent(menu))
+
+def depositar(saldo, valor, extrato, /):
+  if valor > 0:
+    saldo += valor
+    extrato +=  f"Depósito:\tR$ {valor:.2f}\n"
+    print("==Depósito realizado com sucesso!==")
+  else:
+    print("==Depósito não foi realizado com sucesso!==")
+    
+  return saldo, extrato
+  
+def sacar(*, saldo, valor, extrato, limite, numero_saques, limite_saques) 
